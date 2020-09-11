@@ -2,22 +2,25 @@
 
 class CountDownTimer {
 
-    ctdElementId = 'tw-' + generateUuid();
-    languages = {
-        ja: {
-            remaining: '残り',
-            day: '日',
-            hour: '時',
-            minute: '分',
-            second: '秒',
-        }
-    };
-
     constructor(elementId, endDate, dayDigits = 2, lang = 'ja') {
+        this._init();
         this.lang = this.languages[lang] ? this.languages[lang] : this.languages['ja'];
         this._render(elementId);
         this.endDate = typeof endDate === 'string' ? new Date(endDate) : endDate;
         this.dayDigits = dayDigits;
+    }
+
+    _init() {
+        this.ctdElementId = 'tw-' + generateUuid();
+        this.languages = {
+            ja: {
+                remaining: '残り',
+                day: '日',
+                hour: '時',
+                minute: '分',
+                second: '秒',
+            }
+        };
     }
 
     start() {
