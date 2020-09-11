@@ -1,0 +1,42 @@
+.timer-content {
+    max-width: 320px;
+    color: #424242;
+    font-weight: 600;
+}
+
+.d-flex {
+    display: -ms-flexbox; /* IE */
+    display: flex;
+}
+
+.flex-vertical {
+    -ms-flex-direction: column; /* IE */
+    flex-direction: column;
+}
+
+.flex-center {
+    -ms-flex-align: center; /* IE */
+    align-items: center;
+}
+
+.flex-1 {
+    -ms-flex: 1 1 0.000000001px; /* IE */
+    flex: 1;
+    flex-basis: 0.000000001px; /* IE */
+}
+
+.t-display * {
+    flex-basis: 25%;
+    text-align: center;
+}
+
+.timer * {
+    background-color: #6200ea;
+    color: #fff;
+    border: solid 2px #d500f9;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin: 0 4px;
+    padding: 20px 4px;
+}

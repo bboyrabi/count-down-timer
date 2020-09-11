@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountDownTimer</title>
+    <link rel="stylesheet" href="styles/count-timer.css">
+</head>
+
+<body>
+    <h1>Count Down Timer</h1>
+
+    <h2>Until 2021</h2>
+    <div id="timer"></div>
+
+    <h2>Until the Tokyo Olympics</h2>
+    <div id="timer2"></div>
+
+    <h2>Until Tomorrow</h2>
+    <div id="timer3"></div>
+
+    <h2>Finished</h2>
+    <div id="timer4"></div>
+
+    <script src="./scripts/count-timer.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            // Until 2021
+            const cdt = new CountDownTimer('timer', '2021/01/01 00:00:00');
+            cdt.start();
+
+            // Until the Tokyo Olympics
+            const cdt2 = new CountDownTimer('timer2', '2021/07/23 20:00:00', 3, 'ja');
+            cdt2.start();
+
+            // Until Tomorrow
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            tomorrow.setHours(0,0,0,0);
+            const cdt3 = new CountDownTimer('timer3', tomorrow);
+            cdt3.start();
+
+            // Finished
+            const cdt4 = new CountDownTimer('timer4', '2020/09/11 15:00:00');
+            cdt4.start();
+        });
+    </script>
+</body>
+
+</html>
